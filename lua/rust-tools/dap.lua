@@ -54,7 +54,7 @@ function M.setup_adapter()
 end
 
 local function get_cargo_args_from_runnables_args(runnable_args)
-    local cargo_args = runnable_args.cargoArgs
+    local cargo_args = runnable_args.cargoArgs or {}
 
     local message_json = "--message-format=json"
     if not rt.utils.contains(cargo_args, message_json) then

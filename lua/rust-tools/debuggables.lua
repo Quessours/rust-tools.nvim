@@ -84,7 +84,9 @@ local function sanitize_results_for_debugging(result)
         return is_valid_test(value.args)
     end, result)
 
+
     for _, value in ipairs(ret) do
+        value.args.cargoExtraArgs = value.args.cargoExtraArgs or {}
         rt.utils.sanitize_command_for_debugging(value.args.cargoArgs)
     end
 
